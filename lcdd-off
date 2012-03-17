@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# This is the script to turn off the lcdd daemon
+# 1997-04-03 Jimmy Larsson
+#
+
+if [ -f /var/run/lcdd.pid ] ; then
+	kill -INT `cat /var/run/lcdd.pid`
+	rm -f /var/run/lcdd.pid
+	echo "lcdd turned off"
+fi

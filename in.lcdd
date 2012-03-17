@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# in.lcdd
+# Start/Stop the lcd daemon
+# (c) 1998 Jimmy Larsson, d96-jil@nada.kth.se
+#
+#
+
+# See how we were called.
+case "$1" in
+  start)
+	echo -n "Starting LCDD: "
+	/usr/local/sbin/lcdd
+	echo
+	;;
+  stop)
+	echo -n "Stopping LCDD: "
+	/usr/local/sbin/lcdd-off
+	echo
+	;;
+  *)
+	echo "Usage: in.lcdd {start|stop}"
+	exit 1
+esac
+
+exit 0
+
